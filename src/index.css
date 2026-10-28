@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-bg text-white font-display antialiased; }
+.glow { box-shadow: 0 0 40px -10px rgba(255, 46, 99, 0.6); }
