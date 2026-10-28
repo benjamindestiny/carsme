@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { motion } from "framer-motion";
 import { useSearchParams } from "react-router-dom";
 import CarCard from "../components/CarCard";
 import SearchBar from "../components/SearchBar";
@@ -8,6 +9,7 @@ const CATEGORIES = [
   "All",
   "Supercar",
   "Hypercar",
+  "Normal",
   "Sedan",
   "Sport",
   "Electric",
@@ -87,11 +89,26 @@ export default function Cars() {
           No cars match your search.
         </p>
       ) : (
-        <div className="grid md:grid-cols-2 gap-10">
+        <motion.div
+          layout
+          className="grid md:grid-cols-2 gap-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+        >
           {filtered.map((c) => (
-            <CarCard key={c.id} car={c} />
+            <motion.div
+              key={c.id}
+              layout
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            >
+              <CarCard car={c} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       )}
     </div>
   );
