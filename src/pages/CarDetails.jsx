@@ -60,17 +60,6 @@ export default function CarDetails() {
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-12 relative">
-      <div className="drive-by-shell" aria-hidden="true">
-        <div className="drive-car">
-          <span className="car-spoiler" />
-          <span className="car-window" />
-          <span className="car-light front-light" />
-          <span className="car-light rear-light" />
-          <span className="car-wheel wheel-front" />
-          <span className="car-wheel wheel-back" />
-        </div>
-      </div>
-
       <Link
         to="/cars"
         className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition"

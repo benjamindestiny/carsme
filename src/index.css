@@ -21,21 +21,13 @@ body {
   }
 }
 
-@keyframes carDrivePast {
-  0% {
-    transform: translateX(-38vw) translateY(18px) scale(0.7) rotate(-1deg);
-    opacity: 0;
-  }
-  12% {
-    opacity: 1;
-  }
-  48% {
-    transform: translateX(26vw) translateY(-8px) scale(1.02) rotate(0deg);
-    opacity: 1;
-  }
+@keyframes gentleFloat {
+  0%,
   100% {
-    transform: translateX(124vw) translateY(-18px) scale(1.14) rotate(1deg);
-    opacity: 0;
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 
@@ -43,134 +35,8 @@ body {
   animation: gentleFloat 6s ease-in-out infinite;
 }
 
-.drive-by-shell {
-  position: fixed;
-  top: 28%;
-  left: -28vw;
-  width: min(32rem, 56vw);
-  height: 9rem;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.9;
-  filter: drop-shadow(0 22px 28px rgba(255, 46, 99, 0.18));
-  animation: carDrivePast 4.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
-}
-
-.drive-car {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #ff2b5c 0%, #ff7b1c 22%, #4adeff 100%);
-  border-radius: 45% 40% 28% 20% / 58% 52% 32% 30%;
-  box-shadow:
-    inset -10px -6px 22px rgba(9, 12, 18, 0.38),
-    inset 12px 8px 16px rgba(255, 255, 255, 0.25),
-    0 24px 44px rgba(255, 46, 99, 0.4);
-  transform: skewX(-16deg);
-  overflow: visible;
-}
-
-.drive-car::before {
-  content: "";
-  position: absolute;
-  left: 10%;
-  right: 18%;
-  top: 22%;
-  bottom: 28%;
-  border-radius: 30% 30% 20% 26% / 50% 58% 42% 44%;
-  border: 2px solid rgba(9, 12, 18, 0.48);
-  background: rgba(15, 23, 42, 0.42);
-}
-
-.drive-car::after {
-  content: "";
-  position: absolute;
-  right: -2%;
-  top: 36%;
-  width: 12%;
-  height: 18%;
-  border-radius: 8px;
-  background: rgba(255, 210, 91, 0.9);
-  box-shadow: 0 0 14px rgba(255, 210, 91, 1);
-}
-
-.car-spoiler {
-  position: absolute;
-  left: 58%;
-  top: 4%;
-  width: 22%;
-  height: 14%;
-  background: rgba(15, 23, 42, 0.8);
-  border-radius: 10px 14px 6px 8px;
-  transform: skewX(-18deg);
-  box-shadow: 0 0 12px rgba(15, 23, 42, 0.6);
-}
-
-.car-window {
-  position: absolute;
-  top: 23%;
-  left: 26%;
-  width: 30%;
-  height: 26%;
-  border-radius: 18px 24px 10px 14px;
-  background: linear-gradient(
-    135deg,
-    rgba(191, 219, 254, 0.92),
-    rgba(15, 23, 42, 0.58)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transform: skewX(-16deg);
-}
-
-.car-light {
-  position: absolute;
-  top: 38%;
-  width: 12%;
-  height: 16%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(254, 252, 198, 1);
-}
-
-.front-light {
-  right: -2%;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.2),
-    rgba(254, 252, 198, 1)
-  );
-}
-
-.rear-light {
-  left: -2%;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 59, 98, 1),
-    rgba(255, 255, 255, 0.2)
-  );
-  box-shadow: 0 0 18px rgba(255, 59, 98, 0.9);
-}
-
-.car-wheel {
-  position: absolute;
-  bottom: -17%;
-  width: 18%;
-  height: 38%;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at center,
-    #d1d5db 0 17%,
-    #111827 17% 32%,
-    #050816 32% 100%
-  );
-  box-shadow:
-    inset 0 0 0 2px rgba(255, 255, 255, 0.18),
-    0 4px 10px rgba(0, 0, 0, 0.42);
-}
-
-.wheel-front {
-  right: 13%;
-}
-
-.wheel-back {
-  left: 12%;
+/* The new slower drive animation */
+@keyframes drive-slowly {
+  0% { transform: translateX(-100vw); }
+  100% { transform: translateX(100vw); }
 }
